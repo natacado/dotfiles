@@ -12,7 +12,7 @@ fi
 alias l='ls -a'
 alias la='ls -la'
 alias ll='ls -l'
-alias p=pushd
+alias pd=pushd
 alias o=popd
 alias grep='grep --color=auto'
 alias rdm='$PAGER *(#i)(README)*'
