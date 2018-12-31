@@ -1,5 +1,7 @@
 if [[ -r $HOME/.antigen/antigen/antigen.zsh ]]; then
   source $HOME/.antigen/antigen/antigen.zsh
+elif [[ -r $HOME/.zsh/antigen.zsh ]]; then
+  source $HOME/.zsh/antigen.zsh
 elif [[ -r /usr/share/zsh-antigen/antigen.zsh ]]; then
   source /usr/share/zsh-antigen/antigen.zsh
 elif [[ -r /usr/local/share/antigen/antigen.zsh ]]; then
@@ -38,7 +40,7 @@ if [[ $(uname) == 'Darwin' ]]; then
 fi
 
 # Load the theme.
-antigen theme $HOME/.zsh/themes/clean.zsh-theme
+antigen theme $HOME/.zsh/themes clean
 
 # Tell Antigen that you're done.
 antigen apply
