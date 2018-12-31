@@ -12,7 +12,7 @@ fi
 
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen use oh-my-zsh 
+antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
@@ -36,7 +36,6 @@ if [[ $(uname) == 'Darwin' ]]; then
 fi
 
 # Load the theme.
-source $HOME/.zsh/scm-prompt.sh
 antigen theme $HOME/.zsh/themes clean
 
 # Tell Antigen that you're done.
@@ -81,6 +80,9 @@ export EDITOR=vim
 if [ -d $HOME/bin ]; then
   PATH=$PATH:$HOME/bin
 fi
+if [ -d $HOME/bin/override ]; then
+  export PATH=$HOME/bin/override:$PATH
+fi
 
 # Command history settings
 export HISTSIZE=100000
@@ -89,6 +91,11 @@ export HISTFILE="${HOME}/.zsh_history"
 
 # Show how long a command took if it exceeded this (in seconds)
 export REPORTTIME=10
-source $HOME/.zsh/alias.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -d $HOME/.zsh/zshrc.d ]; then
+  for file in $HOME/.zsh/zshrc.d/*.zsh; do
+    source $file
+  done
+fi
