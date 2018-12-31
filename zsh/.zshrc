@@ -1,4 +1,15 @@
-source /usr/local/share/antigen/antigen.zsh
+if [[ -r $HOME/.antigen/antigen/antigen.zsh ]]; then
+  source $HOME/.antigen/antigen/antigen.zsh
+elif [[ -r /usr/local/share/antigen/antigen.zsh ]]; then
+  source /usr/local/share/antigen/antigen.zsh
+else
+  echo "WARNING: Cannot find antigen. Shell config missing many niceties"
+fi
+
+if [ -d "$LOCAL_ADMIN_SCRIPTS" ]; then
+  source "$LOCAL_ADMIN_SCRIPTS"/master.zshrc
+fi
+
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle robbyrussell/oh-my-zsh lib/
@@ -25,7 +36,8 @@ if [[ $(uname) == 'Darwin' ]]; then
 fi
 
 # Load the theme.
-antigen theme robbyrussell
+source $HOME/.zsh/scm-prompt.sh
+antigen theme $HOME/.zsh/themes clean
 
 # Tell Antigen that you're done.
 antigen apply
@@ -35,11 +47,15 @@ setopt extendedglob
 setopt print_exit_value
 setopt auto_cd
 setopt auto_pushd
+setopt pushd_to_home
 setopt correct
 setopt dvorak               # Hint that I use dvorak for spelling corrections
 setopt inc_append_history   # Immediately append commands to history
 setopt prompt_subst         # Enable prompt variable expansion
 setopt rm_star_silent       # Don't warn about deleting with * globs
+setopt complete_in_word     # Allow tab completion in middle of a word
+setopt hist_ignore_space    # Don't record commands starting with initial space
+setopt no_beep              # No noise. Noise bad.
 
 # Prompt formatting
 autoload -U colors && colors
@@ -49,6 +65,7 @@ autoload -U colors && colors
 # https://unix.stackexchange.com/a/167045
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey '\e.' insert-last-word
 
 if type vimpager > /dev/null; then
 export PAGER=vimpager
