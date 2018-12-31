@@ -12,7 +12,7 @@ fi
 
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle robbyrussell/oh-my-zsh lib/
+antigen use oh-my-zsh 
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
