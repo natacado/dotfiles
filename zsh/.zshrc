@@ -67,14 +67,14 @@ bindkey "^[[1;5D" backward-word
 bindkey '\e.' insert-last-word
 
 if type vimpager > /dev/null; then
-export PAGER=vimpager
+  export PAGER=vimpager
+  alias less=$PAGER
+  alias zless=$PAGER
 elif type most > /dev/null; then
-export PAGER=most
+  export PAGER=most
 else
-export PAGER='less -FS'
+  export PAGER='less -FS'
 fi
-alias less=$PAGER
-alias zless=$PAGER
 
 export EDITOR=vim
 if [ -d $HOME/bin ]; then
