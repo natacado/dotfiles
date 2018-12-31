@@ -1,0 +1,4 @@
+#!/bin/bash
+# http://www.catonmat.net/blog/set-operations-in-unix-shell/
+
+exec grep -xF -f $*

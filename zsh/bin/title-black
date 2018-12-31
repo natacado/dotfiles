@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z $TMUX ]; then
+  echo -e "\033]6;1;bg;red;brightness;0\a"
+  echo -e "\033]6;1;bg;green;brightness;0\a"
+  echo -e "\033]6;1;bg;blue;brightness;0\a"
+else
+  # Running in tmux, escape the escape codes
+  echo -e "\033Ptmux;\033\033]6;1;bg;red;brightness;0\a\033\\"
+  echo -e "\033Ptmux;\033\033]6;1;bg;green;brightness;0\a\033\\"
+  echo -e "\033Ptmux;\033\033]6;1;bg;blue;brightness;0\a\033\\"
+fi
+

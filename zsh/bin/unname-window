@@ -1,0 +1,2 @@
+#!/bin/bash
+tmux set-option allow-rename on

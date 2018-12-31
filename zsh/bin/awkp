@@ -1,0 +1,3 @@
+#!/bin/sh
+test "$#" = 1 || { echo 2>&1 "usage: awkp {field-num}" ; exit 1 ; }
+awk "{print \$$1}"

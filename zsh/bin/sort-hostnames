@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eou pipefail
+IFS=$'\n\t'
+
+sort -t. -k2,2 -k1V,1V
