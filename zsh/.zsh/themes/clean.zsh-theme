@@ -1,7 +1,7 @@
 _set_prompt() {
   NCOLOR="green"
   HOSTHINT=" p"
-  if [[ $(hostname -f) =~ "thefacebook.com" ]]; then
+  if [[ -d /opt/facebook/CPE ]]; then
     NCOLOR="cyan"
     HOSTHINT=" f"
   elif [[ $(hostname -f) =~ "facebook.com$" ]]; then
