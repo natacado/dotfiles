@@ -1,5 +1,105 @@
-[alias]
-	st = status
 [user]
-	name = Paul Paradise
+	name = Paul
 	email = paulpar@gmail.com
+
+[core]
+	editor = vim
+	excludesfile = ~/.config/git/global-ignore
+
+[init]
+	defaultBranch = main
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = copy
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+
+[color]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[help]
+	autocorrect = prompt
+
+[github]
+	user = natacado
+
+[url "https://natacado@github.com"]
+	insteadOf = https://github.com
+
+[alias]
+        a = add --all
+        aca = !git add --all && git commit --amend
+        acan = !git add --all && git commit --amend --no-edit
+        b = branch
+        bd = branch -d
+        bdd = branch -D
+        c = commit -S
+        ca = commit -Sa
+        can = commit -Sa --no-edit
+        cm = commit -Sm
+        cam = commit -Sam
+        co = checkout
+        cob = checkout -b
+        cod = checkout develop
+        cl = clone
+        cl1 = clone --depth 1
+        f = fetch
+        fp = fetch --prune
+        ps = push
+        psf = push --force-with-lease
+        pso = push origin
+        psfo = push --force-with-lease origin
+        pushall = !git remote | xargs -L1 git push
+        psl = !git remote | xargs -L1 git push
+        pullall = !git remote | xargs -L1 git pull
+        pll = !git remote | xargs -L1 git pull
+        pl = pull
+        pb = pull --rebase
+        r = rebase
+        ra = rebase --abort
+        rc = rebase --continue
+        rd = rebase develop
+        ri = rebase -i
+        rmf = rm -f
+        rmd = rm -r
+        rmdf = rm -rf
+        sm = submodule
+        sms = submodule status
+        sma = submodule add
+        smu = submodule update
+        smui = submodule update --init
+        smuir = submodule update --init --recursive
+        st = status
+        stc = stash clear
+        stp = stash pop
+        stw = stash show
+        u = reset --
+        unstage = reset --
+        d = diff -w
+        l = log --oneline --graph --decorate
+        s = status
+        staged = diff --cached
+

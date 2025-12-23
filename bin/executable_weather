@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ $# -gt 0 ]; then
+    SEARCH=$(printf "%s+" "$@")
+    SEARCH=${SEARCH%+}
+    curl "http://v2.wttr.in/~$SEARCH"
+else
+    curl "http://v2.wttr.in/Seattle"
+fi
+

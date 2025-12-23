@@ -1,0 +1,4 @@
+#!/bin/sh
+NB_CONTAINERS=$(docker ps -q | wc -l | tr -d '\n')
+printf "^f3^f0 %d" $NB_CONTAINERS
+
