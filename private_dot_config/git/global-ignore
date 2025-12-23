@@ -1,0 +1,40 @@
+.env
+.direnv/
+*~
+\#*\#
+auto-save-list
+.\#*
+
+# Thumbnail cache and other OS cruft files
+._*
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Files that may appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Python
+*.pyc
+
+# C/C++
+*.out
+*.o
+*.so
+
+# Archives
+*.7zz
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+*.log
+*.sqlite
+
+dist/
+
